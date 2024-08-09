@@ -1,17 +1,17 @@
-import React from "react";
-import data_product from "../../assets/Frontend_Assets/data";
-import { Item } from "../Item/Item";
+import React from 'react'
+import new_collection from '../../assets/Frontend_Assets/new_collections'
+import { Item } from '../Item/Item'
 
-export const Popular = () => {
+export const Newcollection = () => {
   return (
     <div className="my-20">
       <div className="">
         <h1 className="flex justify-center uppercase font-bold text-3xl font-outfit">
-          popular sports sneakers
+          new collection
         </h1>
         <div className="w-full flex justify-center">
-          <div className="mt-12 flex justify-between">
-            {data_product.map((item, index) => {
+          <div className="mt-20 grid grid-cols-4 gap-4">
+            {new_collection.map((item, index) => {
               return (
                 <Item
                   key={index}
@@ -27,5 +27,5 @@ export const Popular = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

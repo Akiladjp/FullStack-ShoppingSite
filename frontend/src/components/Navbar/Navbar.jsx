@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
 import logo from "../../assets/Frontend_Assets/logo.png";
 import { FaCartArrowDown } from "react-icons/fa6";
 import { Button } from "../Shared/Button";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export const Navbar = () => {
   const navlinks = [
@@ -27,10 +27,18 @@ export const Navbar = () => {
       title: "Kids",
       link: "/kids",
     },
+    {
+      id: 5,
+      title: "Sports",
+      link: "/sports",
+    },
   ];
 
+  const location = useLocation();
+  const [active, setActive] = useState(location.pathname);
+
   return (
-    <nav className="flex justify-between mt-5 shadow-md pb-4">
+    <nav className="flex justify-between pt-5 shadow-md pb-4 fixed z-50 w-full bg-blue-500 text-white ">
       <div className="flex ml-4">
         <img src={logo} alt="logo" className="w-12" />
         <p className="text-2xl font-bold flex items-center ml-2">SHOOTY</p>
@@ -40,7 +48,10 @@ export const Navbar = () => {
           {navlinks.map((data) => (
             <li
               key={data.id}
-              className="hover:underline underline-offset-4 hover:text-red-600"
+              className={`hover:font-bold  ${
+                active === data.link ? "bg-white text-blue-500 px-2 rounded-lg font-bold" : " "
+              }`}
+              onClick={() => setActive(data.link)}
             >
               <Link to={data.link}>{data.title}</Link>
             </li>
