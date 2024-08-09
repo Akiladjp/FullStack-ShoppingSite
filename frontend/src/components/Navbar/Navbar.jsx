@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import "./Navbar.css";
+import React, { useContext, useState } from "react";
 import logo from "../../assets/Frontend_Assets/logo.png";
 import { FaCartArrowDown } from "react-icons/fa6";
 import { Button } from "../Shared/Button";
 import { Link, useLocation } from "react-router-dom";
+import { ShopContext } from "../../context/ShopContext";
 
 export const Navbar = () => {
   const navlinks = [
@@ -37,6 +37,8 @@ export const Navbar = () => {
   const location = useLocation();
   const [active, setActive] = useState(location.pathname);
 
+  const {getTotalCartItems} = useContext(ShopContext);
+
   return (
     <nav className="flex justify-between pt-5 shadow-md pb-4 fixed z-50 w-full bg-blue-500 text-white ">
       <div className="flex ml-4">
@@ -68,7 +70,7 @@ export const Navbar = () => {
           <FaCartArrowDown className="flex items-center h-full ml-4 text-xl" />
         </Link>
         <div className="absolute z-40 -right-2 top-0 bg-red-600 rounded-full w-3 h-3 text-[8px] flex items-center justify-center text-white font-bold">
-          2
+          {getTotalCartItems()}
         </div>
       </div>
     </nav>

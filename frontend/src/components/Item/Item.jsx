@@ -6,7 +6,7 @@ export const Item = (props) => {
     <div className="flex mx-4  hover:scale-105 hover:shadow-xl rounded-lg pb-2 shadow-md mb-8">
       <div className="flex flex-col w-52">
         <Link to={`/product/${props.id}`}>
-          <img src={props.image} alt="" className="w-52 mx-auto rounded-lg" />
+          <img src={props.image} alt="" onClick={window.scrollTo(0,0)} className="w-52 mx-auto rounded-lg" />
         </Link>
         <p className="text-[12px] mt-3 ml-1">{props.name}</p>
         <div className="flex justify-between w-[60%] text-[16px] mt-2  ml-1">
