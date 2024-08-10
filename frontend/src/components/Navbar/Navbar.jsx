@@ -40,7 +40,7 @@ export const Navbar = () => {
   const {getTotalCartItems} = useContext(ShopContext);
 
   return (
-    <nav className="flex justify-between pt-5 shadow-md pb-4 fixed z-50 w-full bg-blue-500 text-white ">
+    <nav className="flex justify-between pt-5 shadow-md pb-4 fixed z-50 w-full bg-gray-800 text-white ">
       <div className="flex ml-4">
         <img src={logo} alt="logo" className="w-12" />
         <p className="text-2xl font-bold flex items-center ml-2">SHOOTY</p>
@@ -51,7 +51,7 @@ export const Navbar = () => {
             <li
               key={data.id}
               className={`hover:font-bold  ${
-                active === data.link ? "bg-white text-blue-500 px-2 rounded-lg font-bold" : " "
+                active === data.link ? "bg-white text-gray-500 px-2 rounded-lg font-bold" : " "
               }`}
               onClick={() => setActive(data.link)}
             >

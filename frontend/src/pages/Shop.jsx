@@ -5,6 +5,7 @@ import { Offers } from '../components/Offers/Offers'
 import { Newcollection } from '../components/Newcollection/Newcollection'
 import { Newsletter } from '../components/Newsletter/Newsletter'
 import { Footer } from '../components/Footer/Footer'
+import { SliderHero } from '../components/Slider/SliderHero'
 
 
 export const Shop = () => {
@@ -12,7 +13,7 @@ export const Shop = () => {
 
   return (
     <div>
-        <Hero/>
+        <SliderHero/>
         <Popular/>
         <Offers/>
         <Newcollection/>

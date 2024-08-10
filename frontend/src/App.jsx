@@ -11,8 +11,24 @@ import men_banner from "./assets/Frontend_Assets/banner_mens.png";
 import women_banner from "./assets/Frontend_Assets/banner_women.png";
 import kid_banner from "./assets/Frontend_Assets/banner_kids.png";
 import { Footer } from "./components/Footer/Footer";
+import AOS from 'aos';
+import 'aos/dist/aos.css'
+
 
 function App() {
+
+  useEffect(() => {
+    AOS.init(
+      {
+        duration: 800,
+        easing: 'ease-in-sine',
+        delay: 100,
+        offset: 100,
+      }
+    );
+    AOS.refresh();
+  }, []);
+
   return (
     <>
       <BrowserRouter>
@@ -32,7 +48,7 @@ function App() {
             path="/kids"
             element={<ShopCategory banner={kid_banner} category="kid" />}
           />
-          <Route path="/sports" element={<ShopCategory category="sports" />} />
+          <Route path="/sports" element={<ShopCategory banner={kid_banner} category="sport" />} />
           <Route path="/product" element={<Product />}>
             <Route path=":productId" element={<Product />} />
           </Route>
