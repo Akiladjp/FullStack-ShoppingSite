@@ -28,9 +28,11 @@ export const ShopCategory = (props) => {
           <div className="mt-20 grid grid-cols-4 gap-4">
             {all_product.map((data, index) => {
               if (props.category === data.category) {
+                
                 return (
                   <Item
-                    key={index}
+                    index={index}
+                    id={data.id}
                     image={data.image}
                     name={data.name}
                     new_price={data.new_price}
