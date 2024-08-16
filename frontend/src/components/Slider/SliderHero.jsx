@@ -68,7 +68,7 @@ export const SliderHero = () => {
   // }, []);
 
   return (
-    <div className="container pt-12">
+    <div className="container pt-12 w-screen">
       <div className="overflow-hidden rounded-3xl min-h-[550px] sm:min-h-[650px] sm:flex sm:items-center hero-bg-color">
         <div className="container pb-8 sm:pb-0">
           <Slider {...settings}>
