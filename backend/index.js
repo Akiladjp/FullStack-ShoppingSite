@@ -51,11 +51,14 @@ const Product = mongoose.model("Product", {
     type: Number,
     required: true,
   },
+  name: {
+    type: String,
+    required: true,
+  },
   image: {
     type: String,
     required: true,
   },
-
   category: {
     type: String,
     required: true,
@@ -72,7 +75,7 @@ const Product = mongoose.model("Product", {
     type:Date,
     default:Date.now,
   },
-  date: {
+  available: {
     type:Boolean,
     default:true,
   }
