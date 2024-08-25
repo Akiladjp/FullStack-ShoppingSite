@@ -83,8 +83,20 @@ const Product = mongoose.model("Product", {
 
 
 app.post('/addproduct', async (req, res) => {
+    let products = await product.find({}); 
+    let id;
+
+    if(products.length > 0) {
+      let last_product_array = products.slice(-1);
+      let last_product = last_product_array[0];
+      id = last_product.id+1;
+    }
+    else {
+      id = 1;
+    }
+
     const product = new Product({
-        id:req.body.id,
+        id:id,
         name:req.body.name,
         image:req.body.image,
         category:req.body.category,
@@ -100,15 +112,38 @@ app.post('/addproduct', async (req, res) => {
     })
 })
 
+
+
+//Creating API for deleting
+
+app.post('/removeproduct', async (req, res) => {
+  await Product.findOneAndDelete({id:req.body.id});
+  console.log('Successfully romoved');
+  res.json({
+    success:true,
+    name:req.body.name,
+  })
+})
+
+
+//getting all products
+
+app.get('/allProducts', async(req, res) => {
+  let products = await Product.find({})
+  console.log("All Products Fetched");
+  res.send(products);
+})
+
+
 // Database Conection
 
-mongoose.connect(
-  "mongodb+srv://akilapiyumal11:Apdjp1010@cluster0.aof71.mongodb.net/e-commerce"
-);
+mongoose.connect("mongodb+srv://akilapiyumal11:Apdjp1010@cluster0.aof71.mongodb.net/e-commerce")
+  .then(() => console.log("Connected to MongoDB"))
+  .catch(err => console.error("Failed to connect to MongoDB", err))
 
 app.listen(port, (error) => {
   if (!error) {
-    console.log("Server runinnimg " + port);
+    console.log("Server runinning " + port);
   } else {
     console.log(error);
   }
