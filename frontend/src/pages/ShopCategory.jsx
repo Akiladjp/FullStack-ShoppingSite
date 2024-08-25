@@ -12,7 +12,7 @@ export const ShopCategory = (props) => {
         <img
           src={props.banner}
           alt="banner"
-          className="block pt-24 w-[64%] mx-auto"
+          className="block pt-24 mx-auto w-[90%]"
         />
         <div className="flex justify-between mt-8 w-[64%] mx-auto py-2">
           <div className="font-semibold">

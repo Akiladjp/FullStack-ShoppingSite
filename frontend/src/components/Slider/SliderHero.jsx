@@ -60,20 +60,15 @@ export const SliderHero = () => {
     cssEase: "ease-in-out",
     pauseOnHover: false,
     pauseOnFocus: true,
-    // afterChange: () => AOS.refresh(),
   };
 
-  // useEffect(() => {
-  //   AOS.init({ duration: 500, once: false });
-  // }, []);
-
   return (
-    <div className="container pt-12 w-screen">
-      <div className="overflow-hidden rounded-3xl min-h-[550px] sm:min-h-[650px] sm:flex sm:items-center hero-bg-color">
+    <div className="container ">
+      <div className="overflow-hidden rounded-3xl h-screen sm:flex sm:items-center hero-bg-color">
         <div className="container pb-8 sm:pb-0">
           <Slider {...settings}>
             {HeroData.map((data, index) => (
-              <div key={index} className={`flex ${data.bgColor} py-20`}>
+              <div key={index} className={`flex ${data.bgColor} py-32`}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 px-2 md:w-[80%] md:mx-auto">
                   <div className="flex flex-col justify-center gap-4 pt-12 sm:pt-0 text-center sm:text-left order-2 sm:order-1 relative z-10">
                     <h1

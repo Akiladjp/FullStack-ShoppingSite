@@ -1,68 +1,76 @@
-import p1_img from "./product_7.png";
-import p2_img from "./product_8.png";
-import p3_img from "./product_9.png";
-import p4_img from "./product_11.png";
-import p5_img from "./product_10.png";
-import p6_img from "./product_2.png";
-import p7_img from "./product_5.png";
-import p8_img from "./product_6.png";
+import p15_img from "../Shoes/women_7.png";
+import p16_img from "../Shoes/women_8.png";
+import p17_img from "../Shoes/women_9.png";
+import p18_img from "../Shoes/women_10.png";
+import p25_img from "../Shoes/kid_1.png";
+import p26_img from "../Shoes/kid_2.png";
+import p27_img from "../Shoes/kid_3.png";
+import p28_img from "../Shoes/kid_4.png";
 
 let new_collections = [
   {
-    id: 12,
-    name: "Adidas Men's Casual Running Shoes",
-    image: p1_img,
-    new_price: 50.0,
-    old_price: 80.5,
-  },
-  {
-    id: 35,
-    name: "Adidas Men's Casual Sneakers",
-    image: p2_img,
+    id: 15,
+    name: "Women's Lace-Up Sneakers",
+    category: "women",
+    image: p15_img,
     new_price: 85.0,
     old_price: 120.5,
   },
   {
-    id: 14,
-    name: "Adidas Men's Casual Walking Shoes",
-    image: p3_img,
-    new_price: 60.0,
-    old_price: 100.5,
-  },
-  {
-    id: 8,
-    name: "Adidas Kids' Running Shoes",
-    image: p4_img,
-    new_price: 100.0,
-    old_price: 150.0,
-  },
-  {
-    id: 15,
-    name: "Adidas Kids' Casual Sneakers",
-    image: p5_img,
-    new_price: 50.0,
-    old_price: 80.5,
-  },
-  {
-    id: 2,
-    name: "Adidas Men's Sport Football Boots",
-    image: p6_img,
+    id: 16,
+    name: "Women's Peep-Toe Flats",
+    category: "women",
+    image: p16_img,
     new_price: 85.0,
     old_price: 120.5,
   },
   {
     id: 17,
-    name: "Adidas Women's Running Shoes",
-    image: p7_img,
-    new_price: 60.0,
-    old_price: 100.5,
+    name: "Women's Oxford Shoes",
+    category: "women",
+    image: p17_img,
+    new_price: 85.0,
+    old_price: 120.5,
+  },
+  {
+    id: 18,
+    name: "Women's T-Strap Sandals",
+    category: "women",
+    image: p18_img,
+    new_price: 85.0,
+    old_price: 120.5,
+  },
+  {
+    id: 25,
+    name: "Kids' Adventure Sneakers",
+    category: "kid",
+    image: p25_img,
+    new_price: 85.0,
+    old_price: 120.5,
+  },
+  {
+    id: 26,
+    name: "Kids' Sporty Sneakers",
+    category: "kid",
+    image: p26_img,
+    new_price: 85.0,
+    old_price: 120.5,
+  },
+  {
+    id: 27,
+    name: "Kids' Playtime Shoes",
+    category: "kid",
+    image: p27_img,
+    new_price: 85.0,
+    old_price: 120.5,
   },
   {
     id: 28,
-    name: "Adidas Men's Casual Sneakers",
-    image: p8_img,
-    new_price: 100.0,
-    old_price: 150.0,
+    name: "Kids' Colorful Trainers",
+    category: "kid",
+    image: p28_img,
+    new_price: 85.0,
+    old_price: 120.5,
   },
 ];
 

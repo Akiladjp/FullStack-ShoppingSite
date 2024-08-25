@@ -10,6 +10,7 @@ import { Product } from "./pages/Product";
 import men_banner from "./assets/Frontend_Assets/banner_mens.png";
 import women_banner from "./assets/Frontend_Assets/banner_women.png";
 import kid_banner from "./assets/Frontend_Assets/banner_kids.png";
+import sport_banner from "./assets/Frontend_Assets/banner_sport.png";
 import { Footer } from "./components/Footer/Footer";
 import AOS from 'aos';
 import 'aos/dist/aos.css'
@@ -48,7 +49,7 @@ function App() {
             path="/kids"
             element={<ShopCategory banner={kid_banner} category="kid" />}
           />
-          <Route path="/sports" element={<ShopCategory banner={kid_banner} category="sport" />} />
+          <Route path="/sports" element={<ShopCategory banner={sport_banner} category="sport" />} />
           <Route path="/product" element={<Product />}>
             <Route path=":productId" element={<Product />} />
           </Route>
