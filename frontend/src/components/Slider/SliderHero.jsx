@@ -16,36 +16,36 @@ export const SliderHero = () => {
       title: "Men Shoes",
       image: men_slider,
       description: "Be Smart, Wear Unique Shoes",
-      bgColor:"bg-[#4682B4]",
-      text:"text-blue-800",
-      link:'/men'
+      bgColor: "bg-[#4682B4]",
+      text: "text-blue-800",
+      link: "/men",
     },
     {
       id: 2,
       title: "Women Shoes",
       image: women_slider,
       description: "Strengthen your journey with us",
-      bgColor:"bg-[#FFC0CB]",
-      text:"text-red-800",
-      link:'/women'
+      bgColor: "bg-[#FFC0CB]",
+      text: "text-red-800",
+      link: "/women",
     },
     {
       id: 3,
       title: "Kid Shoes",
       image: kid_slider,
       description: "Comfort your kid's every step",
-      bgColor:"bg-[#E6E6FA]",
-      text:"text-purple-800",
-      link:'/kids'
+      bgColor: "bg-[#E6E6FA]",
+      text: "text-purple-800",
+      link: "/kids",
     },
     {
       id: 4,
       title: "Sport Shoes",
       image: sport_slider,
       description: "Be a Champion, Wear Champion Shoes",
-      bgColor:"bg-[#D3D3D3]",
-      text:"text-gray-800",
-      link:'/sports'
+      bgColor: "bg-[#D3D3D3]",
+      text: "text-gray-800",
+      link: "/sports",
     },
   ];
 
@@ -63,48 +63,56 @@ export const SliderHero = () => {
   };
 
   return (
-    <div className="container ">
-      <div className="overflow-hidden rounded-3xl h-screen sm:flex sm:items-center hero-bg-color">
-        <div className="container pb-8 sm:pb-0">
-          <Slider {...settings}>
-            {HeroData.map((data, index) => (
-              <div key={index} className={`flex ${data.bgColor} py-32`}>
-                <div className="grid grid-cols-1 sm:grid-cols-2 px-2 md:w-[80%] md:mx-auto">
-                  <div className="flex flex-col justify-center gap-4 pt-12 sm:pt-0 text-center sm:text-left order-2 sm:order-1 relative z-10">
-                    <h1
-                      data-aos="zoom-out"
-                      className="text-2xl sm:text-6xl lg:text-2xl font-semibold"
-                    >
-                      {data.description}
-                    </h1>
-                    <h1
-                      data-aos="zoom-out"
-                      className={`text-5xl sm:text-6xl lg:text-8xl ${data.text} font-bold`}
-                    >
-                      {data.title}
-                    </h1>
-
-                    <div data-aos="fade-up">
-                      <Link to={data.link}>
+    <div className="relative w-full">
+      <Slider {...settings}>
+        {HeroData.map((data, index) => (
+          <div
+            key={index}
+            className={`flex items-center ${data.bgColor} py-16 sm:py-24`}
+          >
+            <div className="flex items-center justify-center h-full">
+              <div className="flex flex-row items-center space-y-8 md:space-y-0 w-full mx-auto">
+                {/* Text and Buttons Section */}
+                <div
+                  className={`flex flex-col items-start text-center md:text-left space-y-4 ml-12`}
+                >
+                  <h1
+                    data-aos="zoom-out"
+                    className="text-xl sm:text-3xl lg:text-4xl font-semibold text-white"
+                  >
+                    {data.description}
+                  </h1>
+                  <h2
+                    data-aos="zoom-out"
+                    className={`text-4xl sm:text-5xl lg:text-6xl font-bold ${data.text}`}
+                  >
+                    {data.title}
+                  </h2>
+                  <div data-aos="fade-up">
+                    <Link to={data.link}>
                       <Button title="Shop By Category" />
-                      </Link>
-                    </div>
+                    </Link>
                   </div>
-                  <div className="order-1 sm:order-2">
-                    <div data-aos="slide-left" className="relative z-10">
-                      <img
-                        src={data.image}
-                        alt={data.title}
-                        className="w-[300px] h-[300px] md:ml-32 sm:h-[450px] sm:scale-105 lg:scale-110 xl:w-[450px] object-contain drop-shadow-[-8px_4px_6px_rgba(0,0,0,0.4)] relative z-40 transition-transform duration-1000 ease-in hover:duration-1000 hover:scale-125 hover:ease-out"
-                      />
-                    </div>
+                </div>
+
+                {/* Image Section */}
+                <div className="relative flex mx-auto items-center">
+                  <div
+                    data-aos="fade-left"
+                    className="transition-transform duration-500 ease-in-out"
+                  >
+                    <img
+                      src={data.image}
+                      alt={data.title}
+                      className="w-[60%] object-contain mx-auto drop-shadow-lg transform hover:scale-110"
+                    />
                   </div>
                 </div>
               </div>
-            ))}
-          </Slider>
-        </div>
-      </div>
+            </div>
+          </div>
+        ))}
+      </Slider>
     </div>
   );
 };
