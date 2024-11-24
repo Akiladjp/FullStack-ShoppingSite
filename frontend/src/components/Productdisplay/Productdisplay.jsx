@@ -22,7 +22,7 @@ export const Productdisplay = (props) => {
         <div className="flex flex-col text-center md:text-left">
           <h1 className="text-3xl font-bold text-gray-800">{product.name}</h1>
           <p className="text-gray-600 text-sm mt-2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Premier quality shoes from quality venders
           </p>
           <div className="flex items-center gap-2 mt-2">
             <div className="flex text-yellow-500">
